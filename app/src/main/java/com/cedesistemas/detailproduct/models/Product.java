@@ -12,6 +12,10 @@ public class Product implements Serializable {
     @Expose
     private String productName;
 
+    @SerializedName("_id")
+    @Expose
+    private String id;
+
     @SerializedName("description")
     @Expose
     private String productDescription;
@@ -68,4 +72,11 @@ public class Product implements Serializable {
         this.productDescription = productDescription;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }

@@ -2,6 +2,7 @@ package com.cedesistemas.detailproduct.activities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -94,6 +95,14 @@ public class MainActivity extends AppCompatActivity  implements IMainActivity{
 
     @Override
     public void intentToDetailActivity(Product product) {
-        // hacen intent
+        Intent intent =  new Intent(this, DetailActivity.class);
+        intent.putExtra("product", product);
+        startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        validateInternet();
     }
 }
